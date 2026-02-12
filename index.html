@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For Aadyaa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="bg-music-1" loop></audio>
+    <audio id="bg-music-2" loop></audio>
+
+    <section id="page1" class="page">
+        <h1>Will you be my Valentine?</h1>
+        <div class="buttons">
+            <button id="yes-btn">Yes</button>
+            <button id="no-btn">No</button>
+        </div>
+    </section>
+
+    <section id="page2" class="page hidden">
+        <h2>We've been together for</h2>
+        <div id="timer">0 Days</div>
+        <button class="next-btn">Continue</button>
+    </section>
+
+    <section id="page3" class="page hidden">
+        <div id="wax-seal-container">
+            <div class="wax-seal" id="seal-trigger">Tap</div>
+        </div>
+        <div id="letter-content" class="hidden">
+            <h3>My Dearest Aadyaa,</h3>
+            <p>These 120 days have been the most beautiful timeline of my life. Every second spent talking to you or thinking about you has been a blessing I never saw coming. You aren't just a part of my day; you've become the rhythm of my heart.</p>
+            <br>
+            <button class="next-btn" onclick="goToPage('page3', 'page4')">Next</button>
+        </div>
+    </section>
+
+    <section id="page4" class="page hidden">
+        <h2>Hold my hand...</h2>
+        <div id="hold-circle"></div>
+    </section>
+
+    <section id="page5" class="page hidden">
+        <canvas id="frost-canvas"></canvas>
+        <div class="frost-text">Rub to clear the frost...</div>
+    </section>
+
+    <section id="page6" class="page hidden">
+        <h2 class="glowing-pink-title">my love</h2>
+        <p class="glowing-pink-text">it's gonna be a long journey so, stand by me, patience is the key. Just like this timer, some things are worth waiting for. Don't go anywhere.</p>
+        <div id="rose-gold-timer">01:43</div>
+        <div id="p6-secret-buttons" class="hidden"></div>
+    </section>
+
+    <section id="page7" class="page hidden">
+        <div id="p7-stage1">
+            <p style="color:#b76e79; text-align:center; z-index: 100;">(Tap the rose)</p>
+            <img src="" id="p7-rose-tap" width="100" style="display:block; margin: 20px auto; z-index: 100;">
+        </div>
+        <div id="p7-stage2" class="hidden"></div>
+        <div id="p7-stage3" class="hidden">
+            <h2 class="rose-red-scold">you killed them!? REVIVE THEM NOW!!</h2>
+            <div id="p7-bucket">💦🪣</div>
+        </div>
+        <div id="p7-stage4" class="hidden">
+            <h2 class="watery-rose-glow">aww you really thought I'd make you work for it? idiot</h2>
+            <img src="" id="p7-seal-btn">
+        </div>
+    </section>
+
+    <section id="page8" class="page hidden">
+        <div class="p8-overlay">
+            <img src="" id="p8-embedded-rose">
+            <p class="p8-text">My rose... So many roses in the world, but you are the only one that matters.</p>
+            <button id="p8-accept-btn">Accept the Flower</button>
+        </div>
+    </section>
+
+    <section id="page9" class="page hidden" style="background: #000;">
+        <div id="p9-seal-container">
+            <div class="heart-seal" style="color: #8b0000; text-shadow: 0 0 20px #ff0000;">💖</div>
+        </div>
+        <div id="p9-message-box" class="hidden">
+            <p class="crimson-glow-text">
+                Hey baby, sometimes things get busy and I might not be able to talk to you but... remember my heart belongs to you only... and i mean ONLY YOU. so please don't be sad even if i'm away.
+            </p>
+            <img src="" id="p9-next-heart">
+        </div>
+    </section>
+
+    <section id="page10" class="page hidden">
+        <div id="p10-letter-wrapper">
+            <img src="" id="p10-paper-bg">
+            <div class="p10-content">
+                <h2 class="p10-title">To: My pretty princess</h2>
+                <p id="p10-static-text" style="color: #7a4b40; font-family: 'Poppins'; font-size: 1rem; line-height: 1.4;">
+                    I know I'm not perfect, I know I'm a bit of a mess, but I promise to love you with everything I have. 
+                    I promise to be your safest place, your biggest supporter, and your best friend forever. 
+                    I'll choose you every single day, over and over, without a doubt.
+                </p>
+                <textarea id="p10-input" placeholder="Write your promise here..."></textarea>
+            </div>
+        </div>
+        <button id="p10-seal-btn">Forever yours~</button>
+        <div id="p10-final-msg" class="hidden">
+            Saved for eternity. I'll see you in our forever, Aadyaa. 
+            I love you more than words could ever describe.
+        </div>
+    </section>
+
+    <section id="page11" class="page hidden">
+        <div class="proposal-box">
+            <p class="handwritten-prop">Your boyfrie- i mean to be boyfriend is quite dumb you see... but he's smart enough to know he never wants to let you go. Will you be my girlfriend? My forever? My eternity? A part of my soul?.. and someday, my wife?</p>
+            <textarea id="p11-answer" placeholder="Your answer here..."></textarea>
+            <button id="p11-send-btn">Send to my heart</button>
+        </div>
+    </section>
+
+    <section id="page12" class="page hidden">
+        <div id="universe-container">
+            <h1 class="aurora-text">Our forever.</h1>
+            <div id="song-sphere"></div>
+        </div>
+        
+        <div id="spotify-player" class="hidden">
+            <div class="player-content">
+                <img src="" id="sp-cover">
+                <h3 id="sp-title">Song Title</h3>
+                <p id="sp-artist">Artist</p>
+                </div>
+        </div>
+    </section>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
