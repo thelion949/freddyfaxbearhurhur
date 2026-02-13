@@ -27,6 +27,7 @@ button { font-family: 'Poppins', sans-serif; cursor: pointer; border: none; outl
 .buttons { display: flex; gap: 20px; justify-content: center; width: 100%; position: relative; }
 .buttons button { padding: 12px 30px; font-size: 1.2rem; border-radius: 25px; transition: 0.3s; }
 #yes-btn { background: #b76e79; color: white; box-shadow: 0 4px 15px rgba(183,110,121,0.4); }
+/* FIX: Removed position: absolute so it doesn't overlap initially */
 #no-btn { background: #ccc; color: white; }
 
 /* Page 2 */
@@ -34,6 +35,100 @@ button { font-family: 'Poppins', sans-serif; cursor: pointer; border: none; outl
 #page2 h2 { font-size: 2.5rem; color: #b76e79; }
 #timer { font-size: 3rem; color: #555; margin: 20px 0; font-weight: bold; }
 .next-btn { background: #b76e79; color: white; padding: 10px 25px; border-radius: 20px; margin: 0 auto; display: block; }
+
+/* Page 3 */
+#page3 { background: #fdf5e6; }
+#letter-content { background: white; padding: 30px; border-radius: 10px; max-width: 80%; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.wax-seal { width: 80px; height: 80px; background: #8b0000; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-family: 'Great Vibes'; font-size: 1.5rem; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+
+/* Page 4 */
+#page4 { background: #ffe4e1; }
+#hold-circle { width: 100px; height: 100px; border: 2px solid #b76e79; border-radius: 50%; margin-top: 20px; transition: 0.2s; }
+#hold-circle:active { background: #b76e79; transform: scale(0.9); }
+
+/* Page 5 */
+#page5 { position: relative; }
+#frost-canvas { position: absolute; top:0; left:0; z-index: 10; cursor: crosshair; }
+.frost-text { position: absolute; z-index: 5; font-size: 1.5rem; color: #b76e79; }
+
+/* Page 6 */
+#page6 { background: #220011; }
+.glowing-pink-title { color: #ffb6c1; text-shadow: 0 0 15px #ff69b4; font-size: 4rem; }
+.glowing-pink-text { color: #ffb6c1; text-shadow: 0 0 8px #ff69b4; font-size: 1.2rem; max-width: 80%; }
+#rose-gold-timer { color: #b76e79; font-size: 3.5rem; margin-top: 40px; text-shadow: 0 0 10px #b76e79; font-family: 'Courier New', monospace; }
+.love-btn-p6 { background: #ff1493; color: white; padding: 15px; border-radius: 50%; position: absolute; animation: popIn 0.6s forwards; }
+
+/* Page 7: Prank (Text Above Flowers) */
+#page7 { background: #fff0f5; position: relative; }
+.rose-red-scold, .watery-rose-glow {
+    position: relative; z-index: 100; color: #dc143c;
+    font-size: 2rem; font-weight: bold; pointer-events: none; margin-bottom: 20px;
+}
+#p7-stage2 img { z-index: 10; transition: all 0.8s ease; }
+/* FIX: Added .wilted class for the effect */
+.wilted {
+    filter: grayscale(100%) sepia(30%) hue-rotate(320deg);
+    transform: scale(0.8) rotate(10deg);
+    opacity: 0.8;
+}
+#p7-bucket { font-size: 5rem; cursor: grab; position: absolute; z-index: 200; }
+#p7-seal-btn { width: 140px; margin-top: 30px; cursor: pointer; animation: flutter 1s infinite alternate; position: relative; z-index: 100; }
+
+/* Page 8 */
+#page8 { display: flex; align-items: flex-end; justify-content: flex-end; padding: 30px; }
+.p8-overlay { background: rgba(255,255,255,0.85); padding: 30px; border-radius: 20px; max-width: 400px; position: relative; }
+#p8-embedded-rose { width: 100px; position: absolute; top: -50px; right: -20px; filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2)); }
+.p8-text { font-family: 'Great Vibes'; font-size: 1.8rem; color: #8b0000; margin-bottom: 20px; }
+#p8-accept-btn { background: #b76e79; color: white; padding: 10px 20px; border-radius: 20px; }
+
+/* Page 9: Promise (Crimson) */
+#page9 { background: #000; }
+.heart-seal { font-size: 5rem; cursor: pointer; animation: pulse 2s infinite; }
+.crimson-glow-text { color: #ffb6c1; text-shadow: 0 0 10px #8b0000; font-size: 1.4rem; line-height: 1.6; max-width: 80%; }
+#p9-next-heart { width: 80px; margin-top: 30px; cursor: pointer; }
+
+/* Page 10 */
+#page10 { background: #fce3d9; }
+#p10-letter-wrapper { position: relative; width: 90%; max-width: 450px; display: flex; flex-direction: column; align-items: center; }
+#p10-paper-bg { width: 100%; border-radius: 5px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+/* FIX: Adjusted content area and added padding for scrolling */
+.p10-content { position: absolute; top: 12%; left: 12%; right: 12%; bottom: 12%; display: flex; flex-direction: column; overflow-y: auto; padding-right: 5px; }
+.p10-title { font-size: 1.6rem; color: #7a4b40; margin-bottom: 10px; }
+/* FIX: Added min-height to textarea so it's always visible */
+#p10-input { flex-grow: 1; min-height: 100px; background: transparent; border: none; color: #7a4b40; resize: none; font-size: 1.1rem; font-family: 'Poppins'; outline: none; margin-top: 10px; }
+#p10-seal-btn { background: #f8b9a9; color: #7a4b40; padding: 12px 30px; border-radius: 25px; margin-top: 20px; box-shadow: 0 0 15px #f8b9a9; font-family: 'Great Vibes'; font-size: 1.5rem; }
+#p10-final-msg { margin-top: 20px; color: #7a4b40; font-size: 1.2rem; cursor: pointer; }
+
+/* Page 11 */
+#page11 { display: flex; }
+.proposal-box { background: rgba(255,255,255,0.25); backdrop-filter: blur(10px); padding: 30px; border-radius: 20px; width: 85%; max-width: 500px; border: 1px solid rgba(255,255,255,0.4); }
+.handwritten-prop { font-family: 'Great Vibes'; color: #8b4a5d; font-size: 2rem; line-height: 1.4; text-shadow: 1px 1px 2px rgba(255,255,255,0.8); }
+#p11-answer { width: 100%; height: 80px; margin-top: 20px; border-radius: 10px; border: 2px solid #b76e79; padding: 10px; font-family: 'Poppins'; background: rgba(255,255,255,0.8); color: #8b4a5d; }
+#p11-send-btn { margin-top: 20px; background: #b76e79; color: white; padding: 10px 30px; border-radius: 25px; font-family: 'Great Vibes'; font-size: 1.5rem; }
+
+/* Page 12: Universe */
+#page12 { background: #000; perspective: 1000px; overflow: hidden; }
+#universe-container { width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; position: relative; transition: 0.8s; }
+#universe-container.blurred { filter: blur(15px); transform: scale(0.95); }
+.aurora-text { position: absolute; color: white; font-size: 3.5rem; z-index: 0; text-shadow: 0 0 20px white; animation: auroraPulse 5s infinite; pointer-events: none; }
+#song-sphere { width: 0; height: 0; transform-style: preserve-3d; transition: transform 0.1s linear; }
+.song-node { position: absolute; width: 80px; height: 80px; cursor: pointer; backface-visibility: hidden; border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 0 15px rgba(255,182,193,0.3); background-size: cover; background-position: center; transition: transform 0.3s; }
+.song-node:hover { transform: scale(1.2) !important; z-index: 100; }
+
+/* Spotify Player */
+#spotify-player { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.4); opacity: 0; pointer-events: none; transition: 0.6s ease; }
+#spotify-player.active { opacity: 1; pointer-events: auto; }
+.player-content { text-align: center; transform: translateY(50px); transition: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); pointer-events: none; }
+#spotify-player.active .player-content { transform: translateY(0); }
+#sp-cover { width: 280px; height: 280px; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.8); margin-bottom: 25px; pointer-events: auto; }
+#sp-title { color: white; font-size: 2rem; font-family: 'Poppins'; margin-bottom: 5px; }
+#sp-artist { color: #ffb6c1; font-size: 1.1rem; opacity: 0.8; }
+
+/* Animations */
+@keyframes popIn { 0% { transform: scale(0); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+@keyframes flutter { 0% { transform: scale(1); } 100% { transform: scale(1.05) rotate(2deg); } }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+@keyframes auroraPulse { 0% { text-shadow: 0 0 20px #fff; } 50% { text-shadow: 0 0 60px #ff69b4, 0 0 30px #00ffff; } 100% { text-shadow: 0 0 20px #fff; } }
 
 /* Page 3 */
 #page3 { background: #fdf5e6; }
